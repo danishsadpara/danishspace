@@ -16,7 +16,11 @@ const LoginForm: React.FC = () => {
     handleSubmit,
     setError,
     formState: { errors, isSubmitting },
-  } = useForm<formFields>();
+  } = useForm<formFields>({
+    defaultValues: {
+      email: "test@email.com",
+    },
+  });
 
   const onSubmitFn: SubmitHandler<formFields> = async (data) => {
     try {
