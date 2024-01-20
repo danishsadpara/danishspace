@@ -1,4 +1,4 @@
-export interface LoginField {
+export interface ILoginField {
   label?: string;
   name: "email" | "password";
   type: "text" | "password";
@@ -8,4 +8,9 @@ export interface LoginField {
     color: "primary" | "secondary";
     disabled?: boolean;
   };
+}
+
+export interface IValidationSchema {
+  email: "string";
+  password: "string";
 }

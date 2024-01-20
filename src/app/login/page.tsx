@@ -2,15 +2,14 @@
 import React from "react";
 import { Paper, TextField, Typography, Button } from "@mui/material";
 import { loginStyles } from "./styles";
-import { LoginSchema } from "./schema";
+import { LoginSchema, schema } from "./schema";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
 const LoginForm: React.FC = () => {
   const classes = loginStyles();
-  type formFields = {
-    email: string;
-    password: string;
-    validation: object;
-  };
+  type formFields = z.infer<typeof schema>;
   const {
     register,
     handleSubmit,
@@ -20,6 +19,7 @@ const LoginForm: React.FC = () => {
     defaultValues: {
       email: "test@email.com",
     },
+    resolver: zodResolver(schema),
   });
 
   const onSubmitFn: SubmitHandler<formFields> = async (data) => {
@@ -52,7 +52,7 @@ const LoginForm: React.FC = () => {
               type={field.type ?? "text"}
               size="small"
               className={classes.textField ?? ""}
-              {...register(field.name, field.validation)}
+              {...register(field.name)}
             />
             {errors[field.name] && (
               <span className={classes.helperText}>
