@@ -1,6 +1,6 @@
 import styles from "./page.module.css";
 import { Metadata } from "next";
-import LoginIndication from "./userinfo/LoginIndication";
+import LoginIndication from "./components/LoginIndication";
 
 export const metadata: Metadata = {
   title: "Danish-DOJO",
