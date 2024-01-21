@@ -2,14 +2,12 @@
 import React from "react";
 import { Paper, TextField, Typography, Button, Box } from "@mui/material";
 import { loginStyles } from "./analytics/styles";
-import { LoginSchema, schema } from "./analytics/schema";
+import { LoginSchema, formFields, schema } from "./analytics/schema";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 const LoginForm: React.FC = () => {
   const classes = loginStyles();
-  type formFields = z.infer<typeof schema>;
   const {
     register,
     handleSubmit,
@@ -31,6 +29,7 @@ const LoginForm: React.FC = () => {
       setError("root", { message: "This error belongs to the whole form" });
     }
   };
+
   return (
     <Paper className={classes.paper}>
       <Typography variant="h5" className={classes.title}>
