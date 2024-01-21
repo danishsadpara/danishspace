@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Paper, TextField, Typography, Button } from "@mui/material";
+import { Paper, TextField, Typography, Button, Box } from "@mui/material";
 import { loginStyles } from "./analytics/styles";
 import { LoginSchema, schema } from "./analytics/schema";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -39,7 +39,7 @@ const LoginForm: React.FC = () => {
 
       <form onSubmit={handleSubmit(onSubmitFn)}>
         {LoginSchema.map((field, index) => (
-          <>
+          <Box key={index}>
             <Typography>
               {field.label ?? (
                 <span className={classes.helperText}>
@@ -59,7 +59,7 @@ const LoginForm: React.FC = () => {
                 {errors[field.name]?.message}
               </span>
             )}
-          </>
+          </Box>
         ))}
 
         <Button
