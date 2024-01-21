@@ -3,7 +3,6 @@ import { makeStyles } from "@mui/styles";
 export const loginStyles = makeStyles(() => ({
   paper: {
     width: 228,
-    height: 328,
     display: "flex",
     flexDirection: "column",
     position: "absolute",
@@ -14,14 +13,21 @@ export const loginStyles = makeStyles(() => ({
     padding: "10px",
   },
   title: {
-    marginBottom: "30px",
+    marginBottom: "20px",
+    alignSelf: "flex-start",
+    fontWeight: "bolder",
   },
   textField: {
     width: "100%",
-    fontWeight: "bolder",
-    marginTop: "10px",
   },
   submitButton: {
     marginTop: 10,
+    width: "100%",
+    backgroundColor: "goldenrod",
+    color: "black",
+  },
+  helperText: {
+    fontSize: "12px",
+    color: "red",
   },
 }));
