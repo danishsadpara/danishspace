@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import { Paper, TextField, Typography, Button } from "@mui/material";
-import { loginStyles } from "./styles";
-import { LoginSchema, schema } from "./schema";
+import { loginStyles } from "./analytics/styles";
+import { LoginSchema, schema } from "./analytics/schema";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -25,8 +25,8 @@ const LoginForm: React.FC = () => {
   const onSubmitFn: SubmitHandler<formFields> = async (data) => {
     try {
       await new Promise((resolve) => setTimeout(resolve, 1000));
-      throw new Error();
       console.log(data);
+      throw new Error();
     } catch {
       setError("root", { message: "This error belongs to the whole form" });
     }
