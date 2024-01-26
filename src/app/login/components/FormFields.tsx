@@ -1,18 +1,10 @@
 import React from "react";
 import { TextField, Typography, Box } from "@mui/material";
 import { Styles } from "../analytics/styles";
+import { FormFieldProps } from "../analytics/interfaces";
 
-interface FormFieldProps {
-  field: {
-    name: string;
-    label?: string;
-    type?: string;
-  };
-  register: any;
-  error: any;
-}
-
-const FormField: React.FC<FormFieldProps> = ({ field, register, error }) => {
+const FormField: React.FC<FormFieldProps> = (Props) => {
+  const { field, register, error } = Props;
   const classes = Styles();
 
   return (

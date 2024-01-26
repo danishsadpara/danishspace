@@ -19,7 +19,9 @@ const FormSubmission: React.FC = () => {
     },
     resolver: zodResolver(schema),
   });
+
   const classes = Styles();
+
   const onSubmitFn: SubmitHandler<formFields> = async (data) => {
     try {
       await new Promise((resolve) => setTimeout(resolve, 1000));

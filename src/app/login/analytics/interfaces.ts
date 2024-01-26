@@ -3,3 +3,13 @@ export interface ILoginField {
   name: "email" | "password";
   type: "text" | "password";
 }
+
+export interface FormFieldProps {
+  field: {
+    name: string;
+    label?: string;
+    type?: string;
+  };
+  register: any;
+  error: any;
+}

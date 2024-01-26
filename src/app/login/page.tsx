@@ -12,9 +12,7 @@ const LoginForm: React.FC = () => {
       <Typography variant="h5" className={classes.title}>
         Login
       </Typography>
-      {/* <Paper className={classes.p20}> */}
       <FormSubmission />
-      {/* </Paper> */}
     </Paper>
   );
 };
