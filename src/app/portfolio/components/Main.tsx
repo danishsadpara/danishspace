@@ -1,11 +1,9 @@
 import React from "react";
 import { Avatar, Typography, Box, Stack, Chip } from "@mui/material";
-import { styles } from "../analytics/styles";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import EmailIcon from "@mui/icons-material/Email";
 
 const Main = () => {
-  const classes = styles();
   return (
     <Stack direction={"row"} spacing={4} alignItems={"center"}>
       <Avatar
@@ -17,9 +15,6 @@ const Main = () => {
         <Typography variant="h4" fontWeight={"bolder"}>
           Muhammad Murtaza Danish
         </Typography>
-        {/* <Box>
-          <Chip label="Software Engineer" size="small" variant="outlined" />
-        </Box> */}
         <Box>
           <Chip size="small" icon={<LocationOnIcon />} label="Islamabad" />
           <Chip
