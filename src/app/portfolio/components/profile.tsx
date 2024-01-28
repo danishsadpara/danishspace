@@ -1,14 +1,16 @@
 import * as React from "react";
 import { Stack, Chip, Avatar } from "@mui/material";
 
-export default function Profile() {
+const Profile = () => {
   return (
     <Stack direction="row" spacing={1}>
       <Chip
         avatar={<Avatar alt="danishsadpara" src="/assests/profile.png" />}
-        label="Muhammad Murtaza Danish"
+        label="danishsadpara"
         variant="outlined"
       />
     </Stack>
   );
-}
+};
+
+export default Profile;
