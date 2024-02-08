@@ -9,18 +9,27 @@ import {
   ListItemText,
   Typography,
 } from "@mui/material";
-import CStepper from "./Stepper";
 const data = [
   {
     institute: "Pixako Technologies ",
     degree: "Associate Software Engineer",
   },
 ];
-
+const EList = [
+  {
+    label: "Select campaign settings",
+  },
+  {
+    label: "Create an ad group",
+  },
+  {
+    label: "Create an ad",
+  },
+];
 const skills = ["React", "Material UI", "Nextjs", "GraphQL", "MongoDB"];
 const Experience = () => {
   return (
-    <>
+    <Box>
       <Typography variant="h6" fontWeight={"bolder"}>
         Experience
       </Typography>
@@ -46,8 +55,17 @@ const Experience = () => {
           </ListItem>
         </List>
       ))}
-      <CStepper />
-    </>
+      <List>
+        {EList.map((item, index) => (
+          <React.Fragment key={index}>
+            <ListItem>
+              <ListItemText primary={item.label} />
+            </ListItem>
+            {index !== EList.length - 1 && <Divider />}
+          </React.Fragment>
+        ))}
+      </List>
+    </Box>
   );
 };
 

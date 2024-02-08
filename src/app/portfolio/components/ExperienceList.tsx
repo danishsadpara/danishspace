@@ -3,8 +3,9 @@ import Box from "@mui/material/Box";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
+import { List, ListItem, ListItemText, Divider } from "@mui/material";
 
-const steps = [
+const EList = [
   {
     label: "Select campaign settings",
     description: `For each ad campaign that you create, you can control how much
@@ -25,16 +26,17 @@ const steps = [
   },
 ];
 
-export default function CStepper() {
+export default function ExperienceList() {
   return (
-    <Box>
-      <Stepper orientation="vertical">
-        {steps.map((step, index) => (
-          <Step key={index}>
-            <StepLabel>{step.label}</StepLabel>
-          </Step>
-        ))}
-      </Stepper>
-    </Box>
+    <>
+      {EList.map((item, index) => (
+        <List key={index}>
+          <ListItem>
+            <ListItemText primary={item.label} />
+          </ListItem>
+          <Divider component="li" />
+        </List>
+      ))}
+    </>
   );
 }
