@@ -6,8 +6,10 @@ import { LoginSchema, schema } from "./analytics/schema";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
 
 const LoginForm: React.FC = () => {
+  const router = useRouter();
   const classes = loginStyles();
   type formFields = z.infer<typeof schema>;
   const {
@@ -17,7 +19,7 @@ const LoginForm: React.FC = () => {
     formState: { errors, isSubmitting },
   } = useForm<formFields>({
     defaultValues: {
-      email: "test@email.com",
+      email: "danishsadpara@gmail.com",
     },
     resolver: zodResolver(schema),
   });
@@ -26,9 +28,14 @@ const LoginForm: React.FC = () => {
     try {
       await new Promise((resolve) => setTimeout(resolve, 1000));
       console.log(data);
-      throw new Error();
+      const { email, password } = data;
+      if (email === "danishsadpara@gmail.com" && password === "123") {
+        router.push("/learn-nextjs");
+      } else {
+        throw new Error();
+      }
     } catch {
-      setError("root", { message: "This error belongs to the whole form" });
+      setError("root", { message: "Invaild credentials" });
     }
   };
   return (
