@@ -8,7 +8,7 @@ export default function ButtonAppBar() {
   const pathname = usePathname();
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" color="warning">
+      <AppBar position="static" color="default">
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Danish coding dojo
@@ -17,6 +17,7 @@ export default function ButtonAppBar() {
             component={Link}
             href="/login"
             color="inherit"
+            disabled={pathname === "/login" ? false : true}
             sx={{ textDecoration: "none" }}
             className={`link ${pathname === "/login" ? "active" : ""}`}
           >

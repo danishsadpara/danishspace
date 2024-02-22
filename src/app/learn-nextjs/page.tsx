@@ -2,6 +2,7 @@
 import { Avatar, Box, Chip, Typography } from "@mui/material";
 import React from "react";
 import Info from "./_info";
+import LearnRouter from "./_router";
 
 const page = () => {
   return (
@@ -20,6 +21,7 @@ const page = () => {
         variant="outlined"
       />
       <Info />
+      <LearnRouter />
     </Box>
     // </>
   );
