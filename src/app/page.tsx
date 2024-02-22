@@ -3,7 +3,11 @@ import { Metadata } from "next";
 import LoginIndication from "./userinfo/LoginIndication";
 
 export const metadata: Metadata = {
-  title: "Danish-DOJO",
+  title: {
+    absolute: "", //dont need here instead we can use in respective page as absolute in object
+    default: "danishdojo",
+    template: "%s - danishdojo",
+  },
 };
 export default function Home() {
   return (
